@@ -1,8 +1,6 @@
 **Hello World**
 ```ts
 // inside Main.luna
-static Main; // this is implicit and can be removed if desired.
-
 .print("Hello, World!");
 ```
 
@@ -15,7 +13,6 @@ Luna is a purely object oriented language.
 **Simple Inheritance**
 ```ts
 // inside Vehicle.luna
-
 class Vehicle; // this is implicit and can be removed if desired.
 
 location: Location = new Location();
