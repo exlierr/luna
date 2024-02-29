@@ -1,46 +1,38 @@
 **Hello World**
-```
+```ts
 // inside Main.luna
+static Main; // this is implicit and can be removed if desired.
+
 .print("Hello, World!");
 ```
 
-Luna is a purely object oriented language so the above is treated like and can alternatively be programmed like this here.
-
-```
-// inside Main.luna
-global class Main
-{
-  constructor Main() -> Main {}
-
-  global static function main(args: Array<String>) -> void
-  {
-    .print("Hello, World!");
-  }
-
-}
-```
+Luna is a purely object oriented language.
 
 #
 #
 #
 
 **Simple Inheritance**
+```ts
+// inside Vehicle.luna
+
+class Vehicle; // this is implicit and can be removed if desired.
+
+location: Location = new Location();
+
+Vehicle() {} // constructor
+
+getLocation() -> Location { return this.location; }
+setLocation(location: Location) { this.location = location; }
 ```
+
+```ts
 // inside Car.luna
-global constructor Vehicle() -> Vehicle {}
-global constructor Car() extends Vehicle -> Car {}
-```
+class Vehicle; // this is implicit and can be removed if desired.
+extends Vehicle;
 
-The above is treated and can alternatively be programmed like this.
+Car() {}
 
-```
-global class Vehicle
-{
-  global constructor Vehicle() -> Vehicle {}
-}
-
-global class Car extends Vehicle
-{
-  global constructor Car() -> Car {}
-}
+@Override
+getLocation() -> Array<Integer> { return [super.location.getX(), super.location.getY(), super.location.getZ()]; }
 ```
